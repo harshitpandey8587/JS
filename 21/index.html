@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selectort</title>
+    <style>
+        .red-color {
+            color: red;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>    
+    <nav class="block" id="nav-bar-tag"><p class="paragraph">Welcome to my website</p></nav>
+    <h1>Getting users Location </h1>
+    <button id="getLocationButton">GET LOCATION</button>
+    <h3 id="resultFinal">Getting users Location </h3>
+   
+    <script src="script.js">
+        /*
+        In this lect we will see how to fetch user's location, it is very simple but remember that its a
+        Asynchornous task.
+        We can make use of Navigator object in order to fetch the user's location, it is by default available in JS
+        There are several other functions based on this navigator object,(Like canShare,clipboard, cookieEnabled, credentials,doNOtTraack etc etc)
+        
+        navigator.geolocation.getCurrentPosition => jo getCurrentPosition fn hai esme actually hme 2 callback
+        functions pass karne pdte hain , one for success and one for failure (it is  obvious ke zaruri nahi hai
+        ke sahi se location fetch hokr aa he jaye, eslye do callback fn dene pdte hain.)
+        
+        
+        */
+    </script>
+    
+</body>
+</html>

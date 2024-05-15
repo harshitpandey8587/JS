@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selectort</title>
+    <style>
+        .red-color {
+            color: red;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>    
+    <nav class="block" id="nav-bar-tag"><p class="paragraph">Welcome to my website</p></nav>
+    <div class="block">
+        <h1>Hi There, My name is <span id="username">Harshit Pandey</span></h1>
+        <div class="block"><p class="paragraph">I am a div inside a div</p></div>
+        <p class="paragraph">Here is my paragraph for you Guys</p>
+        <pre><code>console.log('Hey There')</code></pre>
+    </div>
+
+    <button onclick="console.log('Yes I am clicked,Example of method 1 of event trigger')">Click Me for Method 1</button>
+    
+    <button onclick="handleButtonClick()">Click Me for Method 2</button>
+    <button id="clickButton">Click Me for Method 3.1</button>
+    <button id="clickButton3.2">Click Me for Method 3.2</button>
+    <button id="nav-bar">Change Color of Nav Bar</button>
+    <script>
+   //bohot Trah ke event hote hain , jinhe hm capture kr skte hain JS me Ex- page load hona is event, page band hona is also an event
+   
+   //Suppose I want to add some functionality to a button, there are alot of ways to do it we'll see them one by one.
+    //1. Simply adding onclick attribute in the tag itself ,inverted commas me we can write JS code in onclick attribute.
+         //Note: ye Zaruri nahi hai ke sirf button par he onclick event laga skte hain, we can even place it on a span tag, paragraph tag etc
+        // But ye acha tareeka nahi hai point number 1.
+
+    //2. Dusra tareeka hai hm ek function bana den javascript ka and usko call kr den onclick event pe
+    
+   
+    function handleButtonClick(){
+        console.log("On click event triggered with Method 2");
+        alert("You clicked some button right?");
+    }
+    
+    
+    //3.1 Teesra tareeka hai apne button DOM Element ko ek ID  de dete hain and then fetch kr lete hain
+    // Then getElementById karke DOM element fetch krlenge and then us DOM element pe ek function assign kr denge Like shown below
+    
+    //Es approach me bas problem ye hai ke agar kis aur bande ne neeche kisi script tag me dubara se koi event listener
+    //chala diya to mera likha hua event listener overwrite hojaega
+
+    const el = document.getElementById("clickButton");
+    el.onclick = function (){
+        console.log("Button click using Method 3.1")
+    }
+
+    //3.2 Overwriding se bachne ke liye most preferred way is defined below. hmlog el.addEventListener karke usme ek callback fn pass kara skte hain. on 'click' event
+    //Mtlb ki jo DOM element nikal ke aya hai (by getElementById),uspe jab bhi koi click kare to , to mera call back function chal jae
+    const elem = document.getElementById("clickButton3.2");
+    //el.addEventListener("click", () => console.log("I am clicked using 3.2 method"))
+
+    function doSomething(){
+        console.log("I am clicked using 3.2 method");
+    }
+    elem.addEventListener("click", doSomething);  //doSomething nam ka callback fn call kr diya hai
+
+
+   
+    
+    const nameBlock = document.getElementById("nav-bar-tag");
+    console.log(nameBlock)
+    
+    const changeColorButton = document.getElementById("nav-bar");
+    console.log(changeColorButton)
+    function changeColorFunction () {
+        if (nameBlock.style.color === "red"){
+            nameBlock.style.color = "blue";
+        } 
+    }
+
+
+    changeColorButton.addEventListener("click",changeColorFunction)
+    </script>
+    
+</body>
+</html>

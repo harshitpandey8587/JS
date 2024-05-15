@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selectort</title>
+    <style>
+        .red-color {
+            color: red;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>    
+    <nav class="block" id="nav-bar-tag"><p class="paragraph">Welcome to my website</p></nav>
+    <div class="block">
+        <h1>Hi There, My name is <span id="username">Harshit Pandey</span></h1>
+        <div class="block"><p class="paragraph">I am a div inside a div</p></div>
+        <p class="paragraph">Here is my paragraph for you Guys</p>
+        <pre><code>console.log('Hey There')</code></pre>
+    </div>
+    <div id="myContainer"></div>
+   
+    <button id="clickButton">Click Me</button>
+   
+    <script>
+        const button = document.getElementById("clickButton");
+        const container = document.getElementById("myContainer");
+
+        button.addEventListener("click", () => {
+            const el = document.createElement("h1");
+            el.innerText = "Added a Heading";
+            container.appendChild(el);
+
+        });
+    </script>
+    
+</body>
+</html>

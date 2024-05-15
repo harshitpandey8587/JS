@@ -1,0 +1,1 @@
+console.log("Hello ,this is the js file and an example of external JS file linking")

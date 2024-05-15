@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selectort</title>
+    <style>
+        .red-color {
+            color: red;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>    
+    <nav class="block" id="nav-bar-tag"><p class="paragraph">Welcome to my website</p></nav>
+    <div class="block">
+        <h1>Hi There, My name is <span id="username">Harshit Pandey</span></h1>
+        <div class="block"><p class="paragraph">I am a div inside a div</p></div>
+        <p class="paragraph">Here is my paragraph for you Guys</p>
+        <pre><code>console.log('Hey There')</code></pre>
+    </div>
+    <div id="myContainer">
+        <input id="input-user-name" placeholder="Enter your Name">
+    </div>
+   
+    <button id="clickButton">Click Me</button>
+   
+    <script src="script.js">
+        /*
+        Like Token , username etc, Local storage is stored in key-value pairs.
+        How to access it?
+        Console na select krke application select kro and then usme local storage ka option hoga.click on it.
+        
+        Har domain ki apni ek local storage hoti hai and we cant access cross domain local storage
+        Mera ye jo app hai vo 127.0.0.1 pe chal rha hai, I can only access storage jo es particular app ke dwara banayi jaegi
+
+        jo script.js hai usme he dekh lo basically es trh se local storage me variable and its value store kari hai
+        localStorage.setItem("name",value);
+                              key value
+
+
+        Aaney vale videos me hm local storage ka bht use karenge , jaise ki current user kon hai, esko token me rakh denge
+        and token ki value ko localStorage me rakh denge,aise bht se use cases milegne
+        */
+    </script>
+    
+</body>
+</html>

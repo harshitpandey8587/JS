@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Query Selectort</title>
+    <style>
+        .red-color {
+            color: red;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>    
+    <nav class="block" id="nav-bar-tag"><p class="paragraph">Welcome to my website</p></nav>
+    <div class="block">
+        <h1>Hi There, My name is <span id="username">Harshit Pandey</span></h1>
+        <div class="block"><p class="paragraph">I am a div inside a div</p></div>
+        <p class="paragraph">Here is my paragraph for you Guys</p>
+        <pre><code>console.log('Hey There')</code></pre>
+    </div>
+    <div id="myContainer"></div>
+   
+    <button id="clickButton">Click Me</button>
+   
+    <script>
+        /*
+        BDSNA
+
+        
+
+        Do type ke task hote hain asynchornouse and synchronous
+        Synchornous task sync me chalte hain and enke results on the spot available hojate hain
+        but sometime suppose we need to fetch some data from any any server, we dont know kitna time lgege
+        vaha se data fetch hone me completely, so in such cases we use Asynchronous task. 
+        (Hmlog fetch() ka use krte hain for fetching something from some server/link)
+
+        In return hme promise milta hai, that bhai main ye data tumhe lakr de dunga,
+        tbtk tm apne kam continue rakho.
+        However it depends ke promise resolve hua h server side ya reject hua hai.
+        But suppose agar mai chahta hun ke jabtk ye data aa na jae tbtk mai program ke control ko age nhi badhne dena chahte
+        basically  mai wait krna chahta hun to in such cases we use 'await' keyword
+        
+        await keyword jo hai , vo hmesha ek async fn ke andar he rakhenge tbhi chalega, else error dedega console pe
+        
+
+        Ek short method bhi dikhaya hai es kam ko karne ka but then is  not prefferred method as code clean nahi dikhta hai usme.
+        */
+       let a = 10;
+       const b = 20;
+        async function getJsonFromLink (){
+            let getData = await fetch("https://jsonplaceholder.typicode.com/posts");
+            console.log(await getData.json());
+        }
+        getJsonFromLink();   //we called asyn function first then in the next line we called a+b but still a+b vala pehle run hojaega and async vala bad me
+       console.log(a + b);
+
+    </script>
+    
+</body>
+</html>
